@@ -11,8 +11,10 @@ from resizeimage import resizeimage
 #import pdb
 
 # reduce the size by the rate of 
-alpha = 0.8 # (x,y)
-beta = 0.8 # number of slices
+alpha = 0.80 # (x,y)
+beta = 0.70 # number of slices
+
+#pdb.set_trace()
 
 rootpath = '/diskStation/LIDC/'
 readfolder = 'LIDC_NUMPY_3d/'
