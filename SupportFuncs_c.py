@@ -517,7 +517,7 @@ def Gen_data(inputParamsLoadData,train_x,test_x):
         filteredNoduleList, filteredCaseList = FilterNodulesCases(noduleCaseFilterParams)
     
     #full paths to all neg patches; 
-    all_neg_file_path = Get_file_paths(data_path,neg_test_dir_list,len(os.listdir(os.path.join(data_path, neg_test_dir_list[0]))),train_x,test_x,'train')
+    all_neg_file_path = Get_file_paths(data_path,neg_test_dir_list,len(os.listdir(os.path.join(data_path, neg_test_dir_list[0]))),train_x,test_x,'test')
     
     if noduleCaseFilterParams != '':    
         #as long as patiend id is valid per filteredCaseList, neg patches from that case can be used even
@@ -736,6 +736,14 @@ def Get_file_paths(directory,pos_neg_direc_list,total_cases,train_x,test_x,indic
             for filename in list_pso_neg_subdir:
                 if prefix in filename:
                     list_pso_neg_subdir_chosen.append(filename)
+        #prefix = iter(train_x)
+        #filename = iter(list_pso_neg_subdir)
+        #for i in range(len(train_x)):
+        #    for j in range(len(list_pso_neg_subdir)):
+        #        char_prefix = prefix.next()
+        #        char_filename = filename.next()
+        #        if char_prefix in char_filename:
+        #            list_pso_neg_subdir_chosen.append(char_filename)
     if indicator == 'test':
         for prefix in test_x:
             for filename in list_pso_neg_subdir:
